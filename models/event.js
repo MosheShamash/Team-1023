@@ -1,4 +1,4 @@
-class Events{
+class Event{
     constructor(type, scenario, positionX, positionY){
 
         this.type = type
@@ -8,18 +8,20 @@ class Events{
     }
     isCharacterAtEvent(){
         if((mike.positionX==this.positionX)&&(mike.positionY==this.positonY)){
-            
+            this.showScenario()
         }
     }
     showScenario(){
-        if(this.type = socialMedia){
-            
-            'Someone you don’t know has sent you a message and claims to be a friend of your best friend. They have asked questions about you including what school you go to. '
-        }
+
+     console.log(this.scenario) 
+     this.showOutcome()
+
     }
-    ShowOutcome(){}
+    showOutcome(){
+        console.log('pick')
+    }
     decision(){}
     
 
 }
-module.exports=events
+module.exports=event
