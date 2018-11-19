@@ -13,7 +13,7 @@ class Event{
     }
     showScenario(){
 
-     console.log(scenario.text) 
+     console.log(this.scenario.text) 
      this.showOutcome()
 
     }
@@ -27,4 +27,4 @@ class Event{
     
 
 }
-module.exports=event
+// module.exports = Event

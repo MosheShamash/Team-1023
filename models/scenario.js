@@ -7,3 +7,4 @@ class Scenario{
 
     }
 }
+// module.exports = Scenario

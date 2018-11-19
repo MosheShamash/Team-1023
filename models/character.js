@@ -1,20 +1,31 @@
 class Character{
-    constructor(name, speed, positionX , positionY){
+    constructor(name, positionX , positionY){
         this.name = name
         this.health = 5
-        this.speed = speed
+        this.speed = 0
         this.positionX = positionX
         this.positionY = positionY
     }
      
-    moveUp(){}
-    moveDown(){}
-    moveLeft(){}
-    moveRight(){}
+    moveUp(){
+        this.positionY -= 5
+    }
+    moveDown(){
+        this.positionY += 5
+
+    }
+    moveLeft(){
+        this.positionX -= 5
+
+    }
+    moveRight(){
+        this.positionX += 5
+
+    }
     affectHealth(value){
         this.health+=value
     }
     
 
 }
-module.exports = character
+// module.exports = Character
