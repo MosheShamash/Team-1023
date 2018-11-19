@@ -24,26 +24,28 @@ function setup() {
 
 function draw() {
     // image(postOnlineImage, postOnline.positionX, postOnline.positionY)
+    move()
+    background(120, 150, 350)
     ellipse(mike.positionX, mike.positionY, 30)
     rect(postOnline.positionX, postOnline.positionY, 50, 50)
     rect(playGame.positionX, playGame.positionY, 50, 50)
     rect(socialNetwork.positionX, socialNetwork.positionY, 50, 50)
     rect(spendTimeOffline.positionX, spendTimeOffline.positionY, 50, 50)
     rect(homework.positionX, homework.positionY, 50, 50)
-
+    
 }
 
-function keyIsPressed() {
-    if(keyCode === UP_ARROW){
+function move() {
+    if(keyIsDown(UP_ARROW)){
         mike.moveUp()
     }
-    if(keyCode === DOWN_ARROW){
+    if(keyIsDown(DOWN_ARROW)){
         mike.moveDown()
     }
-    if(keyCode === LEFT_ARROW){
+    if(keyIsDown(LEFT_ARROW)){
         mike.moveLeft()
     }
-    if(keyCode === RIGHT_ARROW){
+    if(keyIsDown(RIGHT_ARROW)){
         mike.moveRight()
     }
 }

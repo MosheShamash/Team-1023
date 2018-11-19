@@ -2,7 +2,6 @@ class Character{
     constructor(name, positionX , positionY){
         this.name = name
         this.health = 5
-        this.speed = 0
         this.positionX = positionX
         this.positionY = positionY
     }
