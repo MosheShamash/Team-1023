@@ -7,20 +7,23 @@ class Event{
         this.positionY = positionY
     }
     isCharacterAtEvent(){
-        if((mike.positionX==this.positionX)&&(mike.positionY==this.positonY)){
+        if((mike.positionX == this.positionX)&&(mike.positionY==this.positonY)){
             this.showScenario()
         }
     }
     showScenario(){
 
-     console.log(this.scenario) 
+     console.log(scenario.text) 
      this.showOutcome()
 
     }
     showOutcome(){
         console.log('pick')
     }
-    decision(){}
+    decision(option){
+        var decision = Object.values(option)
+        mike.affectHealth(decision[0])
+    }
     
 
 }

@@ -11,12 +11,10 @@ class Character{
     moveDown(){}
     moveLeft(){}
     moveRight(){}
-    increaseHealth(){
-        this.health++
+    affectHealth(value){
+        this.health+=value
     }
-    decreaseHealth(){
-        this.health++
-    }
+    
 
 }
 module.exports = character
