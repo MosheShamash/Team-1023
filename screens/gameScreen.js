@@ -13,8 +13,9 @@ var spendTimeOffline = new Event("Spend Time Offline", spendTimeOfflineScenario,
 var homework = new Event("Homework", homeworkScenario, 650, 400)
 
 var game_screen = true
-
-selectScreen()
+var event_screen = false
+var explain_screen = false
+var which_event
 
 
 
@@ -47,19 +48,6 @@ function gameScreen(){
     rect(homework.positionX, homework.positionY, 50, 50)
 }
 
-function eventScreen() {
-
-}
-
-function selectScreen() {
-    if(game_screen){
-        gameScreen()
-    }
-    else{
-        eventScreen()
-    }
-}
-
 function move() {
     if(keyIsDown(UP_ARROW)){
         mike.moveUp()
@@ -75,12 +63,23 @@ function move() {
     }
 }
 
+function selectScreen() {
+    if(game_screen){
+        gameScreen()
+    }
+    if(event_screen){
+        eventScreen(which_event)
+    }
+    if(explain_screen){
+        explainScreen()
+    }
+}
 function checkCollision() {
     if(mike.positionX >= postOnline.positionX && mike.positionX <= (postOnline.positionX + 50) && mike.positionY >= postOnline.positionY && mike.positionY <= postOnline.positionY + 50){
-        // eventScreen(postOnline)
         console.log("hi")
         game_screen = false
         event_screen = true
+        which_event = postOnline
         mikeToCenter()
         
     }
@@ -90,6 +89,7 @@ function checkCollision() {
         console.log("hi")
         game_screen = false
         event_screen = true
+        which_event = playGame
         mikeToCenter()
     }
 
@@ -97,7 +97,8 @@ function checkCollision() {
         // eventScreen(socialNetwork)
         console.log("hi")
         game_screen = false
-        event_screen = true        
+        event_screen = true
+        which_event = socialNetwork
         mikeToCenter()
     }
 
@@ -106,6 +107,7 @@ function checkCollision() {
         console.log("hi")
         game_screen = false
         event_screen = true
+        which_event = spendTimeOffline
         mikeToCenter()
     }
 
@@ -114,6 +116,7 @@ function checkCollision() {
         console.log("hi")
         game_screen = false
         event_screen = true
+        which_event = homework
         mikeToCenter()
     }
 }
