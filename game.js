@@ -12,6 +12,13 @@ var socialNetwork = new Event("Social Network", socialNetworkScenario, 100, 700)
 var spendTimeOffline = new Event("Spend Time Offline", spendTimeOfflineScenario, 650, 700)
 var homework = new Event("Homework", homeworkScenario, 650, 400)
 
+var game_screen = true
+
+selectScreen()
+
+
+
+    
 function setup() {
     createCanvas(800, 800)
     background(120, 150, 350)
@@ -23,8 +30,14 @@ function setup() {
 }
 
 function draw() {
+    selectScreen()
+    
+}
+
+function gameScreen(){
     // image(postOnlineImage, postOnline.positionX, postOnline.positionY)
     move()
+    checkCollision()
     background(120, 150, 350)
     ellipse(mike.positionX, mike.positionY, 30)
     rect(postOnline.positionX, postOnline.positionY, 50, 50)
@@ -32,7 +45,19 @@ function draw() {
     rect(socialNetwork.positionX, socialNetwork.positionY, 50, 50)
     rect(spendTimeOffline.positionX, spendTimeOffline.positionY, 50, 50)
     rect(homework.positionX, homework.positionY, 50, 50)
-    
+}
+
+function eventScreen() {
+
+}
+
+function selectScreen() {
+    if(game_screen){
+        gameScreen()
+    }
+    else{
+        eventScreen()
+    }
 }
 
 function move() {
@@ -48,4 +73,52 @@ function move() {
     if(keyIsDown(RIGHT_ARROW)){
         mike.moveRight()
     }
+}
+
+function checkCollision() {
+    if(mike.positionX >= postOnline.positionX && mike.positionX <= (postOnline.positionX + 50) && mike.positionY >= postOnline.positionY && mike.positionY <= postOnline.positionY + 50){
+        // eventScreen(postOnline)
+        console.log("hi")
+        game_screen = false
+        event_screen = true
+        mikeToCenter()
+        
+    }
+
+    if(mike.positionX >= playGame.positionX && mike.positionX <= (playGame.positionX + 50) && mike.positionY >= playGame.positionY && mike.positionY <= playGame.positionY + 50){
+        // eventScreen(playGame)
+        console.log("hi")
+        game_screen = false
+        event_screen = true
+        mikeToCenter()
+    }
+
+    if(mike.positionX >= socialNetwork.positionX && mike.positionX <= (socialNetwork.positionX + 50) && mike.positionY >= socialNetwork.positionY && mike.positionY <= socialNetwork.positionY + 50){
+        // eventScreen(socialNetwork)
+        console.log("hi")
+        game_screen = false
+        event_screen = true        
+        mikeToCenter()
+    }
+
+    if(mike.positionX >= spendTimeOffline.positionX && mike.positionX <= (spendTimeOffline.positionX + 50) && mike.positionY >= spendTimeOffline.positionY && mike.positionY <= spendTimeOffline.positionY + 50){
+        // eventScreen(spendTimeOffline)
+        console.log("hi")
+        game_screen = false
+        event_screen = true
+        mikeToCenter()
+    }
+
+    if(mike.positionX >= homework.positionX && mike.positionX <= (homework.positionX + 50) && mike.positionY >= homework.positionY && mike.positionY <= homework.positionY + 50){
+        // eventScreen(homework)
+        console.log("hi")
+        game_screen = false
+        event_screen = true
+        mikeToCenter()
+    }
+}
+
+function mikeToCenter(){
+    mike.positionX = 400
+    mike.positionY = 400
 }
