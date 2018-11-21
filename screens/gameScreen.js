@@ -38,6 +38,7 @@ var homework = new Event("Homework", homeworkScenario, 750, 400)
 var game_screen = true
 var event_screen = false
 var explain_screen = false
+var isGameOver = false
 var which_event
 var explain_text
 var gameScore
@@ -46,21 +47,26 @@ var imageWidth = 100
 
 
 
+
     
 function setup() {
     createCanvas(1000, 800)
     background(120, 150, 350)
+
      postOnlineImage = loadImage("images/post.png")
     characterImage= loadImage('images/character1.png')
     backgroundImage= loadImage('images/background.png')
+
     playGameImage = loadImage("images/game.png")
     socialNetworkImage = loadImage("images/ig.png")
     spendTimeOfflineImage = loadImage("images/Shutdown.png")
     homeworkImage = loadImage("images/homework.png")
+    scenarioBackgroundImage = loadImage("images/scenario-background.jpg")
 }
 
 function draw() {
     selectScreen()
+    isTheGameOver()
     
 }
 
@@ -76,10 +82,11 @@ function gameScreen(){
     image(socialNetworkImage,socialNetwork.positionX, socialNetwork.positionY,  imageWidth,  imageWidth)
     image(spendTimeOfflineImage,spendTimeOffline.positionX, spendTimeOffline.positionY,  imageWidth,  imageWidth)
     image(homeworkImage,homework.positionX, homework.positionY,  imageWidth,  imageWidth)
+
     gameScore = mike.score
     scoreText = "Score: " + gameScore
-    fill(0)
-    textSize(20)
+    fill(255)
+    textSize(30)
     text(scoreText, 50, 50)
 }
 
@@ -108,7 +115,18 @@ function selectScreen() {
     if(explain_screen){
         explainScreen(explain_text)
     }
+
+    if(isGameOver){
+        gameOverScreen()
+    }
 }
+
+function isTheGameOver(){
+    if(gameScore == 4){
+        isGameOver = true
+    }
+}
+
 function checkCollision() {
     if(mike.positionX >= postOnline.positionX && mike.positionX <= (postOnline.positionX + imageWidth) && mike.positionY >= postOnline.positionY && mike.positionY <= postOnline.positionY +  imageWidth){
         console.log("hi")

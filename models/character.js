@@ -2,6 +2,7 @@ class Character{
     constructor(name, positionX , positionY){
         this.name = name
         this.score = 0
+        this.pointsWonOrLost
         this.positionX = positionX
         this.positionY = positionY
         
@@ -29,6 +30,8 @@ class Character{
         else{
         this.score += value
         }
+
+        this.pointsWonOrLost = value
     }
     
 
