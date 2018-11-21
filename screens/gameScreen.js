@@ -12,6 +12,10 @@ var socialNetwork = new Event("Social Network", socialNetworkScenario, 100, 700)
 var spendTimeOffline = new Event("Spend Time Offline", spendTimeOfflineScenario, 650, 700)
 var homework = new Event("Homework", homeworkScenario, 650, 400)
 
+var postOnlineOption1Explanation = new Explain(postOnlineOption1ExplanationText)
+var postOnlineOption2Explanation = new Explain(postOnlineOption2ExplanationText)
+var postOnlineOption3Explanation = new Explain(postOnlineOption3ExplanationText)
+
 var game_screen = true
 var event_screen = false
 var explain_screen = false
@@ -21,9 +25,9 @@ var which_event
 
     
 function setup() {
-    createCanvas(800, 800)
+    createCanvas(1000, 800)
     background(120, 150, 350)
-    // postOnlineImage = loadImage("Post-online-picture-400x321.jpg")
+    postOnlineImage = loadImage("Post-online-picture-400x321.jpg")
     // playGameImage = loadImage("https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjs26Df2uDeAhVpIcAKHZQ9BJ4QjRx6BAgBEAU&url=https%3A%2F%2Folhardigital.com.br%2Fgames-e-consoles%2Fnoticia%2Fgoogle-pode-oferecer-demos-de-jogos-pagos-no-android%2F62740&psig=AOvVaw2Ssm83YXZasVzO-_2zvdMB&ust=1542725554854993")
     // socialNetworkImage = loadImage("https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwidkZCA2-DeAhXKccAKHeMSAhIQjRx6BAgBEAU&url=https%3A%2F%2Fwww.kisspng.com%2Fpng-social-media-youtube-facebook-f8-social-network-fa-4044625%2F&psig=AOvVaw3vKI31r2EGAUSJcptL4QHM&ust=1542725599552727")
     // spendTimeOfflineImage = loadImage("https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwisyJq12-DeAhXsAcAKHY2kAqYQjRx6BAgBEAU&url=http%3A%2F%2Fwww.inclusiveplay.com%2F&psig=AOvVaw1PmpiehOiD_6Y5uRA4KAUY&ust=1542725713287298")
@@ -36,7 +40,7 @@ function draw() {
 }
 
 function gameScreen(){
-    // image(postOnlineImage, postOnline.positionX, postOnline.positionY)
+    image(postOnlineImage, postOnline.positionX, postOnline.positionY)
     move()
     checkCollision()
     background(120, 150, 350)
