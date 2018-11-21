@@ -38,11 +38,13 @@ var homework = new Event("Homework", homeworkScenario, 650, 400)
 var game_screen = true
 var event_screen = false
 var explain_screen = false
+var isGameOver = false
 var which_event
 var explain_text
 var gameScore
 var scoreText
 var imageWidth = 50
+var scenarioBackgroundImage
 
 
 
@@ -50,17 +52,19 @@ var imageWidth = 50
 function setup() {
     createCanvas(1000, 800)
     background(120, 150, 350)
-     postOnlineImage = loadImage("images/facebook.png")
+    postOnlineImage = loadImage("images/facebook.png")
     characterImage= loadImage('images/character.png')
     backgroundImage= loadImage('images/background.jpg')
     playGameImage = loadImage("images/game.png")
     socialNetworkImage = loadImage("images/ig.png")
     spendTimeOfflineImage = loadImage("images/Shutdown.png")
     homeworkImage = loadImage("images/homework.png")
+    scenarioBackgroundImage = loadImage("images/scenario-background.jpg")
 }
 
 function draw() {
     selectScreen()
+    isTheGameOver()
     
 }
 
@@ -69,7 +73,7 @@ function gameScreen(){
     move()
     checkCollision()
 
-    background(backgroundImage)
+    background(scenarioBackgroundImage)
     image(characterImage,mike.positionX, mike.positionY, 50,50)
     image(postOnlineImage,postOnline.positionX, postOnline.positionY, 50, 50)
     image(playGameImage,playGame.positionX, playGame.positionY, 50, 50)
@@ -78,8 +82,8 @@ function gameScreen(){
     image(homeworkImage,homework.positionX, homework.positionY, 50, 50)
     gameScore = mike.score
     scoreText = "Score: " + gameScore
-    fill(0)
-    textSize(20)
+    fill(255)
+    textSize(30)
     text(scoreText, 50, 50)
 }
 
@@ -108,7 +112,18 @@ function selectScreen() {
     if(explain_screen){
         explainScreen(explain_text)
     }
+
+    if(isGameOver){
+        gameOverScreen()
+    }
 }
+
+function isTheGameOver(){
+    if(gameScore == 4){
+        isGameOver = true
+    }
+}
+
 function checkCollision() {
     if(mike.positionX >= postOnline.positionX && mike.positionX <= (postOnline.positionX + imageWidth) && mike.positionY >= postOnline.positionY && mike.positionY <= postOnline.positionY + 50){
         console.log("hi")
