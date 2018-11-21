@@ -4,6 +4,7 @@ class Character{
         this.score = 0
         this.positionX = positionX
         this.positionY = positionY
+        
     }
      
     moveUp(){
