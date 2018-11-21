@@ -1,7 +1,7 @@
 class Character{
     constructor(name, positionX , positionY){
         this.name = name
-        this.health = 5
+        this.score = 0
         this.positionX = positionX
         this.positionY = positionY
         
@@ -22,8 +22,13 @@ class Character{
         this.positionX += 5
 
     }
-    affectHealth(value){
-        this.health+=value
+    affectScore(value){
+        if(this.score === 0 && value < 0){
+            this.score = 0
+        }
+        else{
+        this.score += value
+        }
     }
     
 

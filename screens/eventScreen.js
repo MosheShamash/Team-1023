@@ -95,15 +95,29 @@ function decideHover(){
 
 function decide() {
     if(mouseIsPressed && mouseX > 180 && mouseX < 320 && mouseY > 330 && mouseY < 430){
-        explainScreen(option1)
+        explain_screen = true
+        event_screen = false
+        explain_text = which_event.scenario.explain1.text
+        mike.affectScore(Object.values(which_event.scenario.option1)[0])
+        gameScore = mike.score
+        console.log(gameScore)
+        console.log(mike.score)
     }
 
     if(mouseIsPressed && mouseX > 180 && mouseX < 320 && mouseY > 430 && mouseY < 530){
-        explainScreen(option2)
+        explain_screen = true
+        event_screen = false
+        explain_text = which_event.scenario.explain2.text
+        mike.affectScore(Object.values(which_event.scenario.option2)[0])
+
     }
 
     if(mouseIsPressed && mouseX > 180 && mouseX < 320 && mouseY > 530 && mouseY < 630){
-        explainScreen(option3)
+        explain_screen = true
+        event_screen = false
+        explain_text = which_event.scenario.explain3.text
+        mike.affectScore(Object.values(which_event.scenario.option3)[0])
+
     }
 
 }
