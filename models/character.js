@@ -4,6 +4,7 @@ class Character{
         this.health = 5
         this.positionX = positionX
         this.positionY = positionY
+        
     }
      
     moveUp(){
