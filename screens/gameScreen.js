@@ -27,10 +27,10 @@ var spendTimeOfflineScenario = new Scenario(spendTimeOfflineScenarioText, spendT
 var homeworkScenario = new Scenario(homeworkScenarioText, homeworkScenarioOption1, homeworkScenarioOption2, homeworkScenarioOption3, homeworkOption1Explanation, homeworkOption2Explanation, homeworkOption3Explanation)
 
 var postOnline = new Event("Post Online", postOnlineScenario, 100, 100)
-var playGame = new Event("Play Game", playGameScenario, 650, 100)
-var socialNetwork = new Event("Social Network", socialNetworkScenario, 100, 700)
-var spendTimeOffline = new Event("Spend Time Offline", spendTimeOfflineScenario, 650, 700)
-var homework = new Event("Homework", homeworkScenario, 650, 400)
+var playGame = new Event("Play Game", playGameScenario, 450, 160)
+var socialNetwork = new Event("Social Network", socialNetworkScenario, 100, 400)
+var spendTimeOffline = new Event("Spend Time Offline", spendTimeOfflineScenario, 550, 620)
+var homework = new Event("Homework", homeworkScenario, 750, 400)
 
 
 
@@ -43,8 +43,8 @@ var which_event
 var explain_text
 var gameScore
 var scoreText
-var imageWidth = 50
-var scenarioBackgroundImage
+var imageWidth = 100
+
 
 
 
@@ -52,9 +52,11 @@ var scenarioBackgroundImage
 function setup() {
     createCanvas(1000, 800)
     background(120, 150, 350)
-    postOnlineImage = loadImage("images/facebook.png")
-    characterImage= loadImage('images/character.png')
-    backgroundImage= loadImage('images/background.jpg')
+
+     postOnlineImage = loadImage("images/post.png")
+    characterImage= loadImage('images/character1.png')
+    backgroundImage= loadImage('images/background.png')
+
     playGameImage = loadImage("images/game.png")
     socialNetworkImage = loadImage("images/ig.png")
     spendTimeOfflineImage = loadImage("images/Shutdown.png")
@@ -73,13 +75,14 @@ function gameScreen(){
     move()
     checkCollision()
 
-    background(scenarioBackgroundImage)
-    image(characterImage,mike.positionX, mike.positionY, 50,50)
-    image(postOnlineImage,postOnline.positionX, postOnline.positionY, 50, 50)
-    image(playGameImage,playGame.positionX, playGame.positionY, 50, 50)
-    image(socialNetworkImage,socialNetwork.positionX, socialNetwork.positionY, 50, 50)
-    image(spendTimeOfflineImage,spendTimeOffline.positionX, spendTimeOffline.positionY, 50, 50)
-    image(homeworkImage,homework.positionX, homework.positionY, 50, 50)
+    background(backgroundImage)
+    image(characterImage,mike.positionX, mike.positionY, imageWidth,imageWidth)
+    image(postOnlineImage,postOnline.positionX, postOnline.positionY,  imageWidth, imageWidth)
+    image(playGameImage,playGame.positionX, playGame.positionY,  imageWidth,  imageWidth)
+    image(socialNetworkImage,socialNetwork.positionX, socialNetwork.positionY,  imageWidth,  imageWidth)
+    image(spendTimeOfflineImage,spendTimeOffline.positionX, spendTimeOffline.positionY,  imageWidth,  imageWidth)
+    image(homeworkImage,homework.positionX, homework.positionY,  imageWidth,  imageWidth)
+
     gameScore = mike.score
     scoreText = "Score: " + gameScore
     fill(255)
@@ -125,7 +128,7 @@ function isTheGameOver(){
 }
 
 function checkCollision() {
-    if(mike.positionX >= postOnline.positionX && mike.positionX <= (postOnline.positionX + imageWidth) && mike.positionY >= postOnline.positionY && mike.positionY <= postOnline.positionY + 50){
+    if(mike.positionX >= postOnline.positionX && mike.positionX <= (postOnline.positionX + imageWidth) && mike.positionY >= postOnline.positionY && mike.positionY <= postOnline.positionY +  imageWidth){
         console.log("hi")
         game_screen = false
         event_screen = true
