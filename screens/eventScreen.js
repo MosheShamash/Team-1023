@@ -21,16 +21,16 @@ var pointsWonOrLost3
 
 function eventScreen(event) {
 
-    background(0, 0, 0)
+    background(backgroundImage)
     noFill()
-    stroke('EAF4F4')
+    stroke('#EAF4F4')
     strokeWeight(5)
-    rect(200, 100, 600, 150)
-    rect(210, 110, 580, 130)
+    rect(200, 100, 600, 150, 20)
+    rect(210, 110, 580, 130, 20)
     decideHover()
     decide()
     
-    fill('EAF4F4')
+    fill('#EAF4F4')
     noStroke()
     textAlign(CENTER)
     textSize(20)
@@ -90,13 +90,6 @@ function eventScreen(event) {
 }
 
 function decideHover(){
-    // var distance1 = dist(mouseX, mouseY, 250, 400)
-    // var distance2 = dist(mouseX, mouseY, 250, 500)
-    // var distance3 = dist(mouseX, mouseY, 250, 600)
-
-    // if(distance1 < 70) {
-    //     fill_color = color(255, 255, 255)
-    // }
 
     if(mouseX > 180 && mouseX < 320 && mouseY > 330 && mouseY < 430){
         g1 = 255
@@ -130,17 +123,17 @@ function decide() {
     if(mouseIsPressed && mouseX > 180 && mouseX < 320 && mouseY > 330 && mouseY < 430){
         explain_screen = true
         event_screen = false
+        which_image = 1
         explain_text = which_event.scenario.explain1.text
         pointsWonOrLost1 = Object.values(which_event.scenario.option1)[0]
         mike.affectScore(pointsWonOrLost1)
         gameScore = mike.score
-        console.log(gameScore)
-        console.log(mike.score)
     }
 
     if(mouseIsPressed && mouseX > 180 && mouseX < 320 && mouseY > 430 && mouseY < 530){
         explain_screen = true
         event_screen = false
+        which_image = 2
         explain_text = which_event.scenario.explain2.text
         pointsWonOrLost2 = Object.values(which_event.scenario.option2)[0]
         mike.affectScore(pointsWonOrLost2)
@@ -150,6 +143,7 @@ function decide() {
     if(mouseIsPressed && mouseX > 180 && mouseX < 320 && mouseY > 530 && mouseY < 630){
         explain_screen = true
         event_screen = false
+        which_image = 3
         explain_text = which_event.scenario.explain3.text
         pointsWonOrLost3 = Object.values(which_event.scenario.option3)[0]
         mike.affectScore(pointsWonOrLost3)

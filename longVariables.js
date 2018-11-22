@@ -2,9 +2,9 @@ var postOnlineScenarioText = "You notice your friend has a picture of both" + "\
 var postOnlineScenarioOption1 = {"Tag yourself in the photo": -2}
 var postOnlineScenarioOption2 = {"Do nothing": 0}
 var postOnlineScenarioOption3 = {"Warn them about this being dangerous": 2}
-var postOnlineOption1ExplanationText = "By tagging yourself in the photo, you give access" + "\n" + "to your profile for anyone to see if they’ve seen the picture." + "\n" + "The picture alone provides information about what school" + "\n" + "you go to, and can be used to target you and your friend. Be" + "\n" + "careful what you upload online!"
-var postOnlineOption2ExplanationText = "Although this had no effect - think about what would" + "\n" + "be the best thing to do in the long run."
-var postOnlineOption3ExplanationText = "Well done! This is definitely the best thing to do." + "\n" + "Untagging yourself also removes your profile from the" + "\n" + "photo, making it harder for it to be seen by the" + "\n" + "wrong person!"
+var postOnlineOption1ExplanationText = "By tagging yourself in the photo," + "\n" + "you give access to your profile for anyone" + "\n" + "to see if they’ve seen the picture. The picture alone" + "\n" + "provides information about what school you go to," + "\n" + "and can be used to target you and your friend." + "\n" + "Be careful what you upload online!"
+var postOnlineOption2ExplanationText = "Although this had no effect - think" + "\n" + "about what would be the best" + "\n" + "thing to do in the long run."
+var postOnlineOption3ExplanationText = "Well done! This is definitely the best thing to do." + "\n" + "Untagging yourself also removes" + "\n" + "your profile from the photo," + "\n" + "making it harder for it to be seen by the" + "\n" + "wrong person!"
 
 var playGameScenarioText = "You’re playing a game online, and all of a sudden" + "\n" + "a pop-up comes up saying you’ve won an iPhone X." + "\n" + "What do you do?"
 var playGameScenarioOption1 = {"Click on the pop-up - christmas has come early!": -2}
@@ -12,16 +12,16 @@ var playGameScenarioOption2 = {"Keep playing - you’re about to get a high scor
 var playGameScenarioOption3 = {"Close the window - it’s probably a scam and could give your computer a virus.": +2}
 var playGameOption1ExplanationText = "If you ever see something online that seems too" + "\n" + "good to be true - it probably is. Be careful" + "\n" + "what you click on - and be wary of pop-ups!"
 var playGameOption2ExplanationText = "Although your action had no consequences," + "\n" + "think about what you should have done." + "\n" + "Any pop-ups that seem too good to be" + "\n" + "true probably are!"
-var playGameOption3ExplanationText = "Well done! It’s very likely that this pop up - if clicked" + "\n" + "on could give your computer a virus, and give someone access" + "\n" + "to all of your personal information! As a" + "\n" + "general rule, it’s always best to close any" + "\n" + "pop-ups that appear on screen if you can, or" + "\n" + "just ignore them, as they’re most likely there to" + "\n" + "tempt you into a virus!"
+var playGameOption3ExplanationText = "Well done! If clicked on this pop up" + "\n" + "could give your computer a virus, and give someone" + "\n" + "access to all of your personal information! As a" + "\n" + "general rule, it’s always best to close any" + "\n" + "pop-ups that appear on screen if you can, or" + "\n" + "just ignore them, as they’re most likely there to" + "\n" + "tempt you into a virus!"
 
 
 var socialNetworkScenarioText = "Someone you don’t know has sent you a message" + "\n" + "and claims to be a friend of your best friend." + "\n" + "They have asked questions about you including" + "\n" + "what school you go to. What is the right thing to do?"
 var socialNetworkScenarioOption1 = {"Talk to the person and answer their questions - they seem really friendly!": -2}
 var socialNetworkScenarioOption2 = {"Ignore their messages for now - you’re busy doing something else.": 0}
 var socialNetworkScenarioOption3 = {"Report and block the stranger - they could potentially be dangerous. ": 2}
-var socialNetworkOption1ExplanationText = "Talking to strangers on the internet can be" + "\n" + "dangerous, they may want your personal" + "\n" + "information in order to do you harm." + "\n" + "If you’re unsure what to do talk to a responsible adult."
-var socialNetworkOption2ExplanationText = "If you’re unsure what to do, it can be helpful" + "\n" + "to take a step back to think about the situation" + "\n" + "and talk to a responsible adult so you can figure" + "\n" + "out what to do."
-var socialNetworkOption3ExplanationText = "This is the most reliable approach to deal" + "\n" + "with this situation. Not everyone you meet online is" + "\n" + "dangerous but for young people its best not to" + "\n" + "take the chance."
+var socialNetworkOption1ExplanationText = "Talking to strangers on the internet can be" + "\n" + "dangerous, they may want your personal" + "\n" + "information in order to do you harm." + "\n" + "If you’re unsure what to do" + "\n" + "talk to a responsible adult."
+var socialNetworkOption2ExplanationText = "If you’re unsure what to do, it can be helpful" + "\n" + "to take a step back to think about the situation" + "\n" + "and talk to a responsible adult" + "\n" + "so you can figure out what to do."
+var socialNetworkOption3ExplanationText = "This is the most reliable approach to deal" + "\n" + "with this situation. Not everyone you meet" + "\n" + "online is dangerous but for young people" + "\n" + "its best not to" + "\n" + "take the chance."
 
 
 var spendTimeOfflineScenarioText = "You keep lying to your mum about going onto" + "\n" + "a social networking site because you know she doesn’t" + "\n" + "like you doing it. What is the correct thing to do?"
@@ -37,6 +37,6 @@ var homeworkScenarioText = "Your homework is a research project on rivers." + "\
 var homeworkScenarioOption1 = {"Take the information you need from that website and finish the project \n - you don’t need any other websites as it answers all of your questions.": -2}
 var homeworkScenarioOption2 = {"Research further and look at more than one website to \n make sure the information you have is correct and up to date.": 2}
 var homeworkScenarioOption3
-var homeworkOption1ExplanationText = "Although it seems like the website has all of the information" + "\n" + "you need, it would be a better idea to research further and" + "\n" + "look at multiple websites - just to check the" + "\n" + "information is accurate."
-var homeworkOption2ExplanationText = "This is the smartest thing to do. The internet is a great" + "\n" + "source of information but its so big that it can be hard to spot" + "\n" + "what information isn’t real. Gaining information" + "\n" + "from multiple sources is the best way to ensure that" + "\n" + "you have the best solution."
+var homeworkOption1ExplanationText = "Although it seems like the website" + "\n" + "has all of the information you need," + "\n" + "it would be a better idea to research further and" + "\n" + "look at multiple websites - just to check the" + "\n" + "information is accurate."
+var homeworkOption2ExplanationText = "This is the smartest thing to do. The internet" + "\n" + "is a great source of information but its so" + "\n" + "big that it can be hard to spot" + "\n" + "what information isn’t real. Gaining information" + "\n" + "from multiple sources is the best way" + "\n" + "to ensure that you have the best solution."
 var homeworkOption3ExplanationText

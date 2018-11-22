@@ -40,6 +40,7 @@ var event_screen = false
 var explain_screen = false
 var isGameOver = false
 var which_event
+var which_image
 var explain_text
 var gameScore
 var scoreText
@@ -53,7 +54,7 @@ function setup() {
     createCanvas(1000, 800)
     background(120, 150, 350)
 
-     postOnlineImage = loadImage("images/post.png")
+    postOnlineImage = loadImage("images/post.png")
     characterImage= loadImage('images/character1.png')
     backgroundImage= loadImage('images/background.png')
 
@@ -61,7 +62,16 @@ function setup() {
     socialNetworkImage = loadImage("images/ig.png")
     spendTimeOfflineImage = loadImage("images/Shutdown.png")
     homeworkImage = loadImage("images/homework.png")
-    scenarioBackgroundImage = loadImage("images/scenario-background.jpg")
+
+    happyAstronautImage = loadImage("images/happy-astronaut.png")
+    neutralAlienImage = loadImage("images/neutral-alien.png")
+    angryAlienImage = loadImage("images/angry-alien.png")
+    speechBoxImage = loadImage("images/green-speech.png")
+
+    redArrowImage = loadImage("images/redArrow.png")
+    greenArrowImage = loadImage("images/greenArrow.svg")
+    blueArrowImage = loadImage("images/blueArrow.png")
+    gameOverImage = loadImage("images/game-over.png")
 }
 
 function draw() {
@@ -87,7 +97,10 @@ function gameScreen(){
     scoreText = "Score: " + gameScore
     fill(255)
     textSize(30)
-    text(scoreText, 50, 50)
+    textStyle(BOLD)
+    text(scoreText, 100, 50)
+    textStyle(NORMAL)
+
 }
 
 function move() {
